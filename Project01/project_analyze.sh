@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# A menu for the user to select from
 PS3='Please choose what you want to do: '
 options=("FIXME Log" "File Size List" "File Type Count" "Quit")
 select opt in "${options[@]}"
