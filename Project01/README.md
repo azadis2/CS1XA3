@@ -56,11 +56,15 @@ in their repo. The output is the number of files with that extension in their re
 you want to know the number of.
 
 ## Custom Feature 1:
+ ###  Track URL
+* Description: Track a given url and if there were any changes since the last visit, the new changes will be emailed to the specified address.
+* Execution: TBA
 
-### Find movies 
-* Description: This feature is used when you want to find a movie or an episode of a tv show when you don't remember the name or just remember part of the name. Suppose you want to watch a movie that contains the word **her**. Give it to the script and it will show all the videos on your disk which contain **her**. 
 ## Custom Feature 2:
-###  Organize downloads
-* Description: In order to keep your downloads organized this script will sort your files by type into corresponding folders/directories periodically. If the target directory is not available the user will be asked if they want it to be created or not. (e.g all jpg files will be moved to a folder named jpg. )
+
+### Movie Search
+* Description: Given a movie title, if there is more than one match the script will return the list of matches for the user to choose from and if not, the user will be given a synopsis of the movie form the Internet Movie DataBase [IMDB](imdb.com)
+* Execution: TBA
+
 ## Quit
 By choosing this feature, the user exits the program.
