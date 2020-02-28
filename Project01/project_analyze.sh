@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PS3='Please choose what you want to do: '
-options=("FIXME Log" "File Size List" "File Type Count" "Quit")
+options=("FIXME Log" "File Size List" "Checkout Latest Merge" "File Type Count" "Quit")
 select opt in "${options[@]}"
 do
         case "$opt" in
@@ -19,6 +19,10 @@ do
 			# Lists all files in your repo with their sizes
                         ls -laSh ./*
                         ;;
+		"Checkout Latest Merge")
+			x=git log | grep -i "merge" | head -n 1 | cut -d " " -f1
+			git checkout "$x"
+			;;
                 "File Type Count")
 			# Count the number of files the user gives you
                         read -p "Give me a file extension to look for: " ext
