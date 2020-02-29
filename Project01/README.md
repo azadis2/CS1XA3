@@ -20,12 +20,16 @@ Execute this script from project root with:
  
  When executed the user will be presented with a menu, from which they can select whichever function they'd like to call by entering the corresponding number (and NOT the name of the function). 
  ```
- ~ ./project_analyze.sh
+ $~ ./project_analyze.sh
  # The user is running the script and this is what it should look like.
  1) FIXME Log
  2) File Size List
  3) File Type Count
- 4) Quit
+ 4) Checkout Latest Merge
+ 5) Find Tag
+ 6) Backup and Delete / Restore
+ 7) Custom Feature 2
+ 8) Quit
  Please choose what you want to do:
  ```
  ## Features
@@ -55,6 +59,35 @@ in their repo. The output is the number of files with that extension in their re
 * Execution: Choose number 3 and give the script any extension that
 you want to know the number of.
 
+## Feature 5 - Checkout Latest Merge
+* Description: Finds the most recent commit with the word **"merge"** in a commit message and goes into a detached HEAD state.
+* Execution: Choose the corresponding number which is number 4 and do nothing else.
+## Feature 6 - Find Tag
+* Description: Prompts the user for a tag which looks like this:
+```
+Give me a prompt:
+```
+ Creates a log file called  *tag.log* and find all python (*.py) files in the repository. Finds all lines that begin with a comment and includes Tag in them and puts them in the log file.
+ * Execution: Choose number 5 and give the script a tag and everything else will be done for you.
+
+ 
+## Feature 7 - Backup and Delete / Restore
+* Description: Asks the user either to Backup or Restore which looks like this:
+```
+Choose to either Backup or Restore:
+```
+If the user selects Backup:
+	1. If the backup directory exists it empties it and if it doesn't exist it will make a backup directory in the repository.
+	2. Finds all files with *.tmp* extension.
+		
+			1. Copies them into the backup directory.
+			2. Deletes them from their original location.
+			3. Stores their original location into a file called restore.log which will be created if it does not exist.
+If the user selects Restore:
+1. Since the locations of the files are stored in restore.log , it will restore them with that file.
+2. Gives an error if the file (i.e. restore.log) does not exist.
+* Execution: Choose the corresponding number and select the task that you want it to be completed.
+
 ## Custom Feature 1:
  ###  Track URL
 * Description: Track a given url and if there were any changes since the last visit, the new changes will be emailed to the specified address.
@@ -63,8 +96,9 @@ you want to know the number of.
 ## Custom Feature 2:
 
 ### Movie Search
+
 * Description: Given a movie title, if there is more than one match the script will return the list of matches for the user to choose from and if not, the user will be given a synopsis of the movie form the Internet Movie DataBase [IMDB](imdb.com)
-* Execution: TBA
+* Execution: Choose the corresponding number and give the movie title.
 
 ## Quit
 By choosing this feature, the user exits the program.
