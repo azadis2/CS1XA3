@@ -1,0 +1,4 @@
+Watching for file changes with StatReloader
+[10/Mar/2020 15:02:30] "GET /e/azadis2/hello/goodbye/ HTTP/1.1" 200 43
+[12/Mar/2020 14:31:06] "GET /e/azadis2/hello/ HTTP/1.1" 200 41
+[12/Mar/2020 14:31:08] "GET /e/azadis2/hello/ HTTP/1.1" 200 41
