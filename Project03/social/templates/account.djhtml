@@ -8,7 +8,11 @@
             <div class="w3-card w3-round w3-white">
                 <div class="w3-container w3-padding">
                     <h6 class="w3-opacity">Change Password</h6>
-                    <!--                     TODO Objective 3: Add Password Change Form -->
+                    <form method="post" id="passchangeform" action="{% url 'social:account_view' %}">
+                        {% csrf_token %}
+                        {{ passchangeform }}
+                        <input type="submit" value="Submit" />
+                    </form>
                 </div>
             </div>
         </div>
@@ -18,7 +22,22 @@
             <div class="w3-card w3-round w3-white">
                 <div class="w3-container w3-padding">
                     <h6 class="w3-opacity">Update Info</h6>
-                    <!--                     TODO Objective 3: Add User Info Update Forms -->
+                    <form method="post" id="infochangeform" action="{% url 'social:account_view' %}">
+                        {% csrf_token %}
+                        <label for="employment">Employment: </label>
+                        <input id="employment" type="text" name="employment" value="{{ user_info.employment }}">
+                        <br>
+                        <label for="location">Location: </label>
+                        <input id="location" type="text" name="location" value="{{ user_info.location }}">
+                        <br>
+                        <label for="birthday">Birthday (Enter in the form YYYY-MM-DD): </label>
+                        <input id="birthday" type="text" name="birthday" value="{{ user_info.birthday }}">
+                        <br>
+                        <label for="interest">Interest: </label>
+                        <input id="interest" type="text" name="interest">
+                        <br>
+                        <input type="submit" value="Submit">
+                    </form>
                 </div>
             </div>
         </div>
